@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hero {
+    background: url(./assets/hero-bg.jpg) no-repeat 50%/cover;
+    min-height: 100vh;
+}
+
+.upcoming{
+    padding: 100px 0;
+    background: url("./assets/movie-detail-bg.png") no-repeat 50%/cover;
+    min-height: 100vh;
+}
+.services{
+    background: #232D38;
+    min-height: 110vh;
+}
+.topRated{
+    background: url("./assets/top-rated-bg.jpg") no-repeat 50%/cover;
+    min-height: 100vh;
+}
+
+.more{
+    padding-top: 100px;
+    background: url("./assets/movie-detail-bg.png") no-repeat 50%/cover;
+    min-height: 100vh;
+}
+#series{
+    background: url("./assets/tv-series-bg.jpg") no-repeat 50%/cover;
+    min-height: 100vh;
+}
+.trial{
+    background: url("./assets/cta-bg.jpg") no-repeat 50%/cover;
+min-height: 20vh;
+}
+.footer{
+    background: url("./assets/footer-bg.jpg") no-repeat 50%/cover;
+    min-height: 30vh;
+}
