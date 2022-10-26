@@ -1,4 +1,4 @@
-import React ,{useState} from 'react';
+import React from 'react';
 
 // images
 
@@ -10,7 +10,7 @@ const Hero = () => {
 
     return (
         <>
-            <section className="hero " >
+            <section className="hero ">
                 <div className="container mx-auto px-9">
                     <div className="hero pt-36 flex justify-around h-[100%] flex-col">
                         <p className="text-[#e2d703] font-bold text-4xl">Filmlane</p>

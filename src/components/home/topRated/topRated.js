@@ -17,7 +17,7 @@ import {AiFillStar} from "react-icons/ai";
 const TopRated = () => {
     return (
         <>
-            <section className="topRated  pt-24 ">
+            <section className="topRated  pt-24 pb-4">
                 <div className="container mx-auto px-9">
                     <div className="flex items-center justify-center flex-col">
                         <p className="text-[#e2d703] font-[600] text-[12px]">ONLINE STREAMING</p>

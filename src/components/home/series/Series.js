@@ -17,12 +17,12 @@ const Series = () => {
         axios ("https://api.themoviedb.org/3/movie/now_playing?api_key=72315348c29a41a225bae93956036048&language=en-US&page=1")
             .then(({data})=>{
                 setDataSeries(data.results)
-                console.log(data)
+                // console.log(data)
             })
     })
     return (
         <>
-            <section id="series">
+            <section id="series" className="pb-4">
                 <div className="container mx-auto px-9">
                     <div className="flex items-center justify-center flex-col pt-20">
                         <p className="text-[#e2d703] font-[600] text-[12px] mb-3">BEST TV SERIES</p>
@@ -49,8 +49,6 @@ const Series = () => {
                                 </div>
                             ))
                         }
-
-
                     </div>
                 </div>
             </section>

@@ -9,7 +9,7 @@ import {IoTvOutline} from "react-icons/io5";
 const Services = () => {
     return (
         <>
-            <section className="services pt-24 ">
+            <section className="services pt-24 pb-4">
                 <div className="container mx-auto px-9">
                     <div className="flex items-center justify-around">
                         <div className="flex items-end">

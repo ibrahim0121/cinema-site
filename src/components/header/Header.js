@@ -25,14 +25,13 @@ const Header = () => {
         <header className="p-5 z-50 fixed w-full" style={{background: scroll > 30 ? "hsl(207, 19%, 11%) " : "none", transition: ".3s"}}>
             <div className="container mx-auto px-9">
                 <div className="flex items-center justify-between">
-                    <NavLink to="/hero"><img src={logo} alt="img"/></NavLink>
+                    <NavLink to="/"><img src={logo} alt="img"/></NavLink>
                     <div>
                         <NavLink to="/latest" className="font-bold uppercase mx-6 hover:text-[#e2d703] text-white">Latest</NavLink>
-                        <NavLink to="/nowPlaying" className="font-bold uppercase mx-6 hover:text-[#e2d703] text-white">Now Playing</NavLink>
-                        <NavLink to="/popular" className="font-bold uppercase mx-6 hover:text-[#e2d703] text-white">Popular</NavLink>
+                        <NavLink to="/latest" className="font-bold uppercase mx-6 hover:text-[#e2d703] text-white">Now Playing</NavLink>
+                        <NavLink to="/latest" className="font-bold uppercase mx-6 hover:text-[#e2d703] text-white">Popular</NavLink>
                         <NavLink to="/topRated" className="font-bold uppercase mx-6 hover:text-[#e2d703] text-white">Top Rated</NavLink>
-                        <NavLink to="/Upcoming" className="font-bold uppercase mx-6 hover:text-[#e2d703] text-white">Upcoming</NavLink>
-
+                        <NavLink to="/upcoming" className="font-bold uppercase mx-6 hover:text-[#e2d703] text-white">Upcoming</NavLink>
                     </div>
                     <div className="flex items-center">
                         <BsSearch className="text-white text-2xl cursor-pointer" />

@@ -38,3 +38,29 @@ min-height: 20vh;
     background: url("./assets/footer-bg.jpg") no-repeat 50%/cover;
     min-height: 30vh;
 }
+
+/*---------slider------------*/
+
+.reviews--general__swiper {
+    display: flex;
+    justify-content: center;
+}
+
+.slick-arrow {
+    position: absolute;
+    left: 20px;
+}
+
+.slick-next {
+    position: absolute;
+    right: 20px;
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-track {
+    display: flex;
+    width: 100%;
+}
