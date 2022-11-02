@@ -7,6 +7,8 @@ import TopRated from "../components/home/topRated/topRated";
 import Upcoming from "../components/home/upcoming/Upcoming";
 import More from "./more/More";
 import Home from "../components/home/Home";
+import Actors from "./actors/Actors";
+import AboutActors from "./aboutActors/AboutActors";
 
 const Pages = () => {
     return (
@@ -18,7 +20,9 @@ const Pages = () => {
                 <Route path="/popular" element={<Popular/>}/>
                 <Route path="/topRated" element={<TopRated/>}/>
                 <Route path="/upcoming" element={<Upcoming/>}/>
-                <Route path="/more" element={<More/>}/>
+                <Route path="/more/:id" element={<More/>}/>
+                <Route path="/actors/:id" element={<Actors/>}/>
+                <Route path="/aboutActors/:id" element={<AboutActors/>}/>
             </Routes>
         </div>
     );

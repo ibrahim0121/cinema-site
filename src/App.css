@@ -39,6 +39,16 @@ min-height: 20vh;
     min-height: 30vh;
 }
 
+.actors{
+    padding-top: 100px;
+    background: url("./assets/movie-detail-bg.png") no-repeat 50%/cover;
+    min-height: 100vh;
+}
+#aboutActors{
+    padding-top: 100px;
+    background: url("./assets/movie-detail-bg.png") no-repeat 50%/cover;
+    min-height: 100vh;
+}
 /*---------slider------------*/
 
 .reviews--general__swiper {
@@ -46,16 +56,23 @@ min-height: 20vh;
     justify-content: center;
 }
 
+
 .slick-arrow {
     position: absolute;
-    left: 20px;
+    left:20px;
+    top: 185px;
+    z-index: -10;
 }
 
 .slick-next {
     position: absolute;
-    right: 20px;
+    /*right:20px;*/
+    bottom: 410px;
+    left: 150px;
 }
-
+.slick-prev{
+    display: none;
+}
 .slick-list {
     overflow: hidden;
 }
@@ -63,4 +80,13 @@ min-height: 20vh;
 .slick-track {
     display: flex;
     width: 100%;
+    position: relative;
 }
+.slick-dots{
+    /*display: none;*/
+}
+.slick-dots li{
+    display: none;
+}
+
+

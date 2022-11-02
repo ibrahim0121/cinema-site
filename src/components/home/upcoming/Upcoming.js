@@ -1,24 +1,27 @@
 import React, {useState, useEffect} from 'react';
 import Slider from "react-slick"
-import axios from "axios"
+import {apiKay} from "../../../api/api";
+
+
 // icons
-import  {BsStopwatch} from "react-icons/bs";
+import {BsStopwatch} from "react-icons/bs";
 import {AiFillStar} from "react-icons/ai";
 
 // images
-
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 const Upcoming = () => {
-    const [dataMovies, setDataMovies] = useState([])
+    const [dataUpcoming, setDataUpcoming] = useState([])
     useEffect(() => {
-        axios("https://api.themoviedb.org/3/movie/now_playing?api_key=72315348c29a41a225bae93956036048&language=en-US&page=1")
+        axios(`
+https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKay}&language=en-US&page=1`)
             .then(({data}) => {
-                setDataMovies(data.results)
-                // console.log(data.results)
+                setDataUpcoming(data.results)
+                console.log(data.results)
             })
     }, [])
-    // console.log(dataMovies)
+    console.log(dataUpcoming)
     const settings = {
         dots: true,
         infinite: true,
@@ -50,20 +53,18 @@ const Upcoming = () => {
                         </div>
                     </div>
 
-                        <Slider {...settings}>
-                            {
-                                dataMovies.slice(0, 4).map((el) => (
-                                    <div className="flex  pt-10">
+                    <Slider {...settings}>
+                        {
+                            dataUpcoming.slice(0, 20).map((el) => (
+                                <div className="flex  pt-10" key={el.id}>
                                     <div className="mx-2" key={el.id}>
-
-                                        <NavLink to="/more"><img
-                                            src={`https://image.tmdb.org/t/p/w500${el.poster_path && el.poster_path}`}
+                                        <NavLink to=""><img
+                                            src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
                                             alt=""
                                             className="w-72 h-96 object-cover  rounded-lg hover:opacity-60 cursor-pointer"/></NavLink>
-
                                         <div className="flex justify-between w-72 pt-3">
 
-                                            <NavLink to="/more"
+                                            <NavLink to={`/more/${el.id}`}
                                                      className="text-white font-bold  text-[14]  hover:text-[#e2d703] cursor-pointer">{el.original_title}</NavLink>
                                             <span className="text-[#e2d703] font-extrabold ">{el.release_date}</span>
                                         </div>
@@ -79,8 +80,9 @@ const Upcoming = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>))
-                            }
+                                </div>
+                            ))
+                        }
                     </Slider>
                 </div>
             </section>
