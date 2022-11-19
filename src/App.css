@@ -1,3 +1,6 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -49,44 +52,50 @@ min-height: 20vh;
     background: url("./assets/movie-detail-bg.png") no-repeat 50%/cover;
     min-height: 100vh;
 }
+
+.searchPage{
+    padding-top: 100px;
+    background: url("./assets/movie-detail-bg.png") no-repeat 50%/cover;
+    min-height: 100vh;
+}
 /*---------slider------------*/
 
-.reviews--general__swiper {
-    display: flex;
-    justify-content: center;
-}
+/*.reviews--general__swiper {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
 
 
-.slick-arrow {
-    position: absolute;
-    left:20px;
-    top: 185px;
-    z-index: -10;
-}
+/*.slick-arrow {*/
+/*    position: absolute;*/
+/*    left:20px;*/
+/*    top: 185px;*/
+/*    z-index: -10;*/
+/*}*/
 
-.slick-next {
-    position: absolute;
-    /*right:20px;*/
-    bottom: 410px;
-    left: 150px;
-}
-.slick-prev{
-    display: none;
-}
-.slick-list {
-    overflow: hidden;
-}
+/*.slick-next {*/
+/*    position: absolute;*/
+/*    !*right:20px;*!*/
+/*    bottom: 410px;*/
+/*    left: 150px;*/
+/*}*/
+/*.slick-prev{*/
+/*    display: none;*/
+/*}*/
+/*.slick-list {*/
+/*    overflow: hidden;*/
+/*}*/
 
-.slick-track {
-    display: flex;
-    width: 100%;
-    position: relative;
-}
-.slick-dots{
-    /*display: none;*/
-}
-.slick-dots li{
-    display: none;
-}
+/*.slick-track {*/
+/*    display: flex;*/
+/*    width: 100%;*/
+/*    position: relative;*/
+/*}*/
+/*.slick-dots{*/
+/*    !*display: none;*!*/
+/*}*/
+/*.slick-dots li{*/
+/*    display: none;*/
+/*}*/
 
 

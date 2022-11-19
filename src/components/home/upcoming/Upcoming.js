@@ -1,26 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import Slider from "react-slick"
 import {apiKay} from "../../../api/api";
-
+import {NavLink} from "react-router-dom";
+import axios from "axios";
 
 // icons
 import {BsStopwatch} from "react-icons/bs";
 import {AiFillStar} from "react-icons/ai";
 
 // images
-import {NavLink} from "react-router-dom";
-import axios from "axios";
+
 
 const Upcoming = () => {
     const [dataUpcoming, setDataUpcoming] = useState([])
-    useEffect(() => {
-        axios(`
-https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKay}&language=en-US&page=1`)
-            .then(({data}) => {
-                setDataUpcoming(data.results)
-                console.log(data.results)
-            })
-    }, [])
+
     console.log(dataUpcoming)
     const settings = {
         dots: true,
@@ -29,6 +22,25 @@ https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKay}&language=en-US&pag
         slidesToShow: 4,
         slidesToScroll: 1
     };
+
+
+    //------PAGINATION-----//
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const pages = [];
+    for (let i = 1; i <= 10; i++)
+        pages.push(i)
+    const detailsFilm = (el) => {
+        setCurrentPage(el)
+    }
+    useEffect(() => {
+        axios(`
+        https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKay}&language=en-US&page=${currentPage}`)
+            .then(({data}) => {
+                setDataUpcoming(data.results)
+                console.log(data.results)
+            })
+    }, [currentPage])
     return (
         <>
 
@@ -52,10 +64,10 @@ https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKay}&language=en-US&pag
                             </button>
                         </div>
                     </div>
-
-                    <Slider {...settings}>
+                    {/*<div className="flex row flex-wrap">*/}
+                        <Slider {...settings}>
                         {
-                            dataUpcoming.slice(0, 20).map((el) => (
+                            dataUpcoming.slice(0, 6).map((el) => (
                                 <div className="flex  pt-10" key={el.id}>
                                     <div className="mx-2" key={el.id}>
                                         <NavLink to=""><img
@@ -83,12 +95,27 @@ https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKay}&language=en-US&pag
                                 </div>
                             ))
                         }
-                    </Slider>
-                </div>
+                        </Slider>
+                    </div>
+                    <div className="flex my-9 items-center justify-center">
+                        <ul className="inline-flex -space-x-px">
+                            {
+                                pages.map((el) => (
+                                    <li key={el}>
+                                        <button
+                                            onClick={() => detailsFilm(el)}
+                                            className={el === currentPage ? "py-2 px-3 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 bg-gray-100 text-gray-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" :
+                                                "py-2 px-3 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"}>{el}</button>
+                                    </li>
+                                ))
+                            }
+
+                        </ul>
+                    </div>
+                {/*</div>*/}
             </section>
         </>
-    )
-        ;
+    );
 };
 
 export default Upcoming;

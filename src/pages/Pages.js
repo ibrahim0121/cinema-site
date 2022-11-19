@@ -9,6 +9,7 @@ import More from "./more/More";
 import Home from "../components/home/Home";
 import Actors from "./actors/Actors";
 import AboutActors from "./aboutActors/AboutActors";
+import SearchPage from "./searchPage/SearchPage";
 
 const Pages = () => {
     return (
@@ -23,6 +24,7 @@ const Pages = () => {
                 <Route path="/more/:id" element={<More/>}/>
                 <Route path="/actors/:id" element={<Actors/>}/>
                 <Route path="/aboutActors/:id" element={<AboutActors/>}/>
+                <Route path="/search-movie/:movieName" element={<SearchPage/>}/>
             </Routes>
         </div>
     );
